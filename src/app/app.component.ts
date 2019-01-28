@@ -15,7 +15,6 @@ export class AppComponent {
 
   onFileSelected(event) {
     this.selectedFile = <File>event.target.files[0]
-    console.log(this.selectedFile)
   }
 
   onUpload() {
@@ -25,9 +24,9 @@ export class AppComponent {
 
       fd.append('image', this.selectedFile, this.selectedFile.name)
       this.http.post('http://localhost:3000/upload/', fd)
-        .subscribe(res => {
-          console.log(res)
-        })
+        .subscribe( res => console.log(res),
+                    err => console.log(err)
+                  )
     } else {
       alert('Selecciona un Archivo')
     }

@@ -1,7 +1,9 @@
-<h1>File Upload</h1>
-<input type="file"
-class="form-control"
-(change)="onFileSelected($event)"
->
-<button type="button" class="btn btn-success"
-(click)="onUpload()">Upload</button>
+<div class="container container__alone">
+    <h1 class="title">File Upload</h1>
+    <div class="form">
+      <i class="fa fa-cloud-download text__mainColor x2 m-3" aria-hidden="true"></i>
+      <input type="file" class="text__mainColor" (change)="onFileSelected($event)">
+      <button type="button" class="btn btn__mainColor rounded" (click)="onUpload()">Upload</button>
+    </div>
+</div>
+
