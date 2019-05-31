@@ -23,6 +23,8 @@ export class AppComponent {
       const fd = new FormData()
 
       fd.append('image', this.selectedFile, this.selectedFile.name)
+
+      console.log(fd)
       this.http.post('http://localhost:3000/upload/', fd)
         .subscribe( res => console.log(res),
                     err => console.log(err)
